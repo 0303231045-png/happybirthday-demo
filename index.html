@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Thiệp Sinh Nhật - Personalized</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section id="formSection" class="card">
+      <h1>🎉 Tạo thiệp sinh nhật</h1>
+      <label>Tên người nhận</label>
+      <input id="nameInput" type="text" placeholder="Gõ tên..." />
+      <label>Lời chúc</label>
+      <textarea id="msgInput" placeholder="Gõ lời chúc..."></textarea>
+      <div class="row">
+        <button id="createBtn" class="primary">Tạo thiệp</button>
+        <button id="demoBtn" class="secondary">Mẫu nhanh</button>
+      </div>
+      <p class="small">Sau khi tạo, chia sẻ link này cho người nhận — họ sẽ mở và xem thiệp.</p>
+    </section>
+
+    <section id="cardSection" class="card hidden">
+      <div class="topbar">
+        <button id="backBtn" class="secondary">← Quay lại</button>
+        <div class="controls">
+          <button id="playPause" class="secondary">⏯️</button>
+          <button id="downloadBtn" class="secondary">📥 Tải ảnh</button>
+        </div>
+      </div>
+
+      <div id="stage" class="stage">
+        <canvas id="bgCanvas"></canvas>
+        <div id="content" class="content">
+          <h2 id="titleText">Happy Birthday</h2>
+          <p id="wishText" class="wish"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Audio: if birthday.mp3 exists it will play, otherwise WebAudio fallback used -->
+  <audio id="bgAudio" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
